@@ -2,6 +2,7 @@ package com.second_service.odersservice.order.repository;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -28,5 +29,6 @@ public class OrderEntity implements Serializable {
     private String orderId;
 
     @Column(nullable = false,updatable = false,insertable = false)
+    @ColumnDefault(value = "CURRENT_TIMESTAMP")
     private Date createAt;
 }
